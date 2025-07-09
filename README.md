@@ -1,68 +1,76 @@
-✅ SMILES_Generation_and_Prediction
-📌 Project Title
-Comparing VAE and GAN Models for Molecular SMILES Generation and Property Prediction with GNNs
+# 🧪 SMILES Generation and Property Prediction using Deep Learning
 
-🧠 Overview
-This project compares two generative deep learning models—Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs)—for generating novel molecular SMILES strings. Generated molecules are further evaluated for chemical properties using Graph Neural Networks (GCNs & GINs).
+## 📌 Project Title
+**Comparing VAE and GAN Models for Molecular SMILES Generation and Property Prediction with GNNs**
 
-🧪 Dataset
-QM9: 134,000+ small organic molecules with computed properties
+## 🧠 Overview
+This project explores the use of deep generative models—**Variational Autoencoders (VAEs)** and **Generative Adversarial Networks (GANs)**—to generate novel molecular structures represented as **SMILES strings**. These generated molecules are evaluated using **Graph Neural Networks (GCNs and GINs)** for chemical property prediction.
 
-Format: SMILES strings + graph structure
+---
 
-🔍 Problem Statement
-Can deep generative models produce novel, valid, and chemically diverse molecules?
-How do different generators (VAE vs. GAN) influence downstream property prediction by GNNs?
+## 🧪 Dataset
+- **QM9**: A widely used benchmark dataset with **134,000+** small organic molecules.
+- **Format**: SMILES strings (for generation) + molecular graphs (for prediction).
 
-🎯 Objectives
-Train VAE and GAN on QM9 for SMILES generation
+---
 
-Train GCN and GIN for property prediction (e.g., dipole moment)
+## 🔍 Problem Statement
+1. Can deep generative models produce **valid, novel, and chemically diverse** molecules?
+2. How do different generators (VAE vs. GAN) influence downstream property prediction using GNNs?
 
-Compare generative quality (validity, novelty, diversity) and prediction accuracy
+---
 
-🧰 Tech Stack
-Languages: Python
+## 🎯 Objectives
+- Train **VAE** and **GAN** models on QM9 for molecular generation.
+- Train **GCN** and **GIN** models to predict molecular properties (e.g., dipole moment).
+- Compare:
+  - Generative quality (validity, uniqueness, novelty, diversity).
+  - Prediction accuracy (MAE, MSE, etc.).
 
-Frameworks: PyTorch, PyTorch Geometric
+---
 
-Libraries: RDKit, DeepChem, fcd-torch, NumPy, Pandas, Seaborn
+## 🧰 Tech Stack
+- **Languages**: Python
+- **Frameworks**: PyTorch, PyTorch Geometric
+- **Libraries**: RDKit, DeepChem, NumPy, Pandas, Seaborn, `fcd-torch`
 
-🧱 Methodology
-VAE/GAN Training:
+---
 
-Learn molecular structure distributions
+## 🧱 Methodology
 
-Generate new SMILES strings
+### 🔄 VAE / GAN Training
+- Learn underlying distributions of molecular structures
+- Generate SMILES strings from latent space or adversarial learning
 
-Post-processing:
+### 🧹 Post-processing
+- Use **RDKit** to validate generated molecules
+- Remove syntactically or chemically invalid outputs
 
-Filter valid molecules using RDKit
+### 🔬 GNN Training
+- Train **GCN** and **GIN** models to predict molecular properties
+- Evaluate predictions using:
+  - MSE (Mean Squared Error)
+  - MAE (Mean Absolute Error)
+  - Tanimoto similarity
+  - FCD (Fréchet ChemNet Distance)
 
-GNN Training:
+---
 
-Predict properties from generated molecules
+## 📊 Results Summary
+| Model | Highlights |
+|-------|------------|
+| **VAE** | High validity, novelty, and a well-organized latent space |
+| **GAN** | Good molecule quality but lower diversity (mode collapse observed) |
+| **GIN** | Outperformed GCN in property prediction accuracy |
+| **Best Pipeline** | **VAE + GIN** |
 
-Evaluate with MSE, MAE, Tanimoto similarity, and FCD
+---
 
-📊 Results
-VAE: High validity, novelty, and smoother latent space
+## 🧬 Evaluation Metrics
+- ✅ Validity Rate
+- 🎯 Uniqueness & Novelty
+- 🔁 Internal Diversity
+- 🧠 Tanimoto Similarity
+- 📈 Fréchet ChemNet Distance (FCD)
 
-GAN: Strong but less diverse molecules, minor mode collapse
-
-GNNs: GIN outperformed GCN in predictive accuracy
-
-Best Pipeline: VAE + GIN
-
-🧬 Evaluation Metrics
-Validity Rate
-
-Uniqueness
-
-Novelty
-
-Fréchet ChemNet Distance (FCD)
-
-Tanimoto Similarity
-
-Internal Diversity
+---
