@@ -1,0 +1,14 @@
+streamlit
+torch
+torchvision
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+torch-geometric
+rdkit-pypi
+pandas
+numpy
+matplotlib
+seaborn
+Pillow
